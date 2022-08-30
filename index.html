@@ -1,0 +1,141 @@
+
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<title>Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Raleway:500,200,700" rel="stylesheet">
+<style>
+h1,h2,h3,h4,h5,h6,p,a,li,span{font-family:'Raleway',sans-serif}.resume{background-color:#1f1f1f;min-height:100vh}.resume .main{height:100%;width:1500px;background-color:#fff;padding:0 25px;margin:0 auto}.resume .main .header{border-bottom:2px solid #ddd}.resume .main .header .page-title-container{margin:0 auto;text-align:center;padding-bottom:10px}.resume .main .header .page-title{font-size:48pt;display:inline}.resume .main .header .page-title-first{font-weight:400}.resume .main .header .page-title-last{font-weight:200}.resume .main .header .header-icons{text-align:center}.resume .main .header .header-icons .page-subhead{margin:1rem 15px;display:inline}.resume .main .header .fa{padding-right:10px}.resume .main .indented{padding-left:40px}.resume .main .category-row{padding-bottom:2px}.resume .main .category-row .category{margin-right:10px;padding-left:5px;padding-right:10px;border-bottom:1px solid #ddd;border-right:1px solid #ddd}.resume .main .category-row .category-row-title{margin:.4rem 0}.resume .main .category-row .category-title,.resume .main .category-row .category-subtitle{display:inline;margin-top:10px;margin-bottom:5px}.resume .main .category-row .category-bullets{margin-top:5px}.resume .main .category-row p,.resume .main .category-row li{font-size:smaller}sidebar-category:last-of-type .category{border-bottom:0!important;padding-bottom:0!important;margin-bottom:0!important}category:last-of-type category-item:last-of-type .category{border-bottom:0!important;padding-bottom:0!important;margin-bottom:0!important}a.page-subhead{color:initial;text-decoration:none}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<script>angular.module("Resume",["ngMaterial"]).component("resume",{transclude:true,template:'<div class="resume">\n    <section class="main" ng-transclude></section>\n  </div>'}).component("resumeHeading",{controllerAs:"r",transclude:true,bindings:{firstName:"@",lastName:"@",website:"@",phone:"@",telegram:"@",email:"@",github:"@",linkedin:"@"},template:'<div class="header">\n    <div class="page-title-container">\n      <h1 class="page-title page-title-first">{{r.firstName}}</h1>\n      <h1 class="page-title page-title-last">{{r.lastName}}</h1>\n    </div>\n    <div class="header-icons">\n      <a ng-if="r.website" class="md-subhead page-subhead" ng-href="https://{{r.website}}" target="_blank">\n        <i class="fa fa-lg fa-code"></i>{{r.website}}\n      </a>\n      <span ng-if="r.phone" class="md-subhead page-subhead">\n        <i class="fa fa-lg fa-phone"></i>{{r.phone}}\n      </span>\n      <a ng-if="r.email" class="md-subhead page-subhead" ng-href="mailto:{{r.email}}" target="_blank">\n        <i class="fa fa-lg fa-envelope"></i>{{r.email}}\n      </a>\n      <a ng-if="r.telegram" class="md-subhead page-subhead" ng-href="https://telegram.me/{{r.telegram}}" target="_blank">\n        </i><i style="font-size:20px" class="fa">&#xf2c6;</i>{{r.telegram}}\n      </a>\n <a ng-if="r.github" class="md-subhead page-subhead" ng-href="https://github.com/{{r.github}}" target="_blank">\n        <i class="fa fa-lg fa-github"></i>{{r.github}}\n      </a>\n      <a ng-if="r.linkedin" class="md-subhead page-subhead" ng-href="https://linkedin.com/in/{{r.linkedin}}" target="_blank">\n        <i class="fa fa-lg fa-linkedin-square"></i>{{r.linkedin}}\n      </a>\n    </div>\n  </div>\n  <ng-transclude></ng-transclude>'}).component("resumeBody",{transclude:true,template:'<div layout="row" ng-transclude></div>'}).component("resumeColumn",{transclude:true,template:"<div ng-transclude></div>"}).component("sidebarCategory",{controllerAs:"r",bindings:{name:"@"},transclude:true,template:'<div flex="" class="category-row">\n    <div class="category">\n      <h5 class="category-row-title">{{r.name}}</h5>\n      <ng-transclude></ng-transclude>\n    </div>\n  </div>'}).component("category",{controllerAs:"r",bindings:{name:"@"},transclude:true,template:'<div flex="" class="category-row">\n    <h4 class="category-row-title">{{r.name}}</h4>\n    <ng-transclude></ng-transclude>\n  </div>'}).component("categoryItem",{controllerAs:"r",bindings:{title:"@",subtitle:"@"},transclude:true,template:'<div class="category">\n      <h5 class="category-title md-body-2">{{r.title}}</h5>&nbsp;\n      <h5 class="category-subtitle md-caption">{{r.subtitle}}</h5>\n      <ul class="category-bullets" ng-transclude></ul>\n  </div>'});
+</script>
+
+</head><body ng-app="Resume" ng-cloak="">
+
+    <resume>
+        <resume-heading first-name="" last-name="hi" telegram="@try_cat_ch" github="github.com/try-cat-ch" email="try.cat4@gmail.com" <!--phone="123-456-7890"-->
+        </resume-heading>
+        <resume-body>
+
+        <resume-column flex="80">
+          <pre>
+<center>-----BEGIN PGP PUBLIC KEY BLOCK-----</center>
+
+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
+=J4hv
+
+<center>-----END PGP PUBLIC KEY BLOCK-----</center>
+
+  </pre>
+  </resume-column>
+
+            <resume-column flex="90">
+              <category name="Навыки">
+                  <category-item title="Интересы">
+                      <li><strong>Информационная безопасность</strong> Анализ защищённости инфраструктуры</li>
+                      <li><strong>TCP/IP</strong> Работа с серверным оборудованием, администрирование сетей</li>
+                      <li><strong>Linux</strong> Debian, Arch </li>
+                  </category-item>
+                  <category-item title="Опыт">
+                      <li><strong>Администрирование</strong> Windows \ Linux</li>
+                      <li><strong>Языки</strong> Python \ PowerShell \ Bash </li>
+                      <li><strong>СУБД</strong> Oracle SQL \ PostgreSQL</li>
+                      <li><strong>Cloud</strong> AWS</li>
+                      <li><strong>CI/CD</strong> GitHub Actions</li>
+                      <li><strong>Configuration Automation</strong> Ansible </li>
+                      <li><strong>Load Balance</strong> HAProxy</li>
+                      <li><strong>Containers</strong> Docker</li>
+
+                  </category-item>
+              </category>
+              <category name="Проекты">
+                  <category-item title="База данных + Клиент" subtitle="Python, Django, Oracle SQL">
+                      <li>Проектирование и создание базы данных с использованием СУБД Oracle SQL</li>
+                      <li>Разработка клиент-серверного приложения для работы с базой данных</li>
+                  </category-item>
+
+                  <category-item title="Аудит безопасности сетевого оборудования Mikrotik" subtitle="Python">
+                    <li>Разработка утилиты для автоматического аудита безопасности роутеров Mikrotik внутри сети организации</li>
+                </category-item>
+              </category>
+
+            </resume-column>
+            <resume-column flex="60">
+                <category name="Опыт работы">
+                    <category-item title="Техник лаборатории сетевых коммуникаций и программного обеспечения [1.5 года]" subtitle="">
+                        <li>Администрирование локальной сети</li>
+                        <li>Обслуживание и конфигурирование парка аппаратного обеспечения</li>
+                        <li>Разработка программного обеспечения для внутренних нужд</li>
+                    </category-item>
+
+                    <category-item title="Пентестер [2 года]" subtitle="">
+                        <li>Анализ защищённости сети</li>
+                        <li>Исследования и опыты в области информационной безопасности</li>
+                        <li>Разработка программного обеспечения для автоматизации процессов</li>
+                    </category-item>
+                  </category>
+
+
+                <category name="Образование">
+                    <p>Факультет "Информационная безопасность"<p>
+                    <p>Специальность "Компьютерная безопасность"</p>
+                </category>
+
+                <category name="Achievements">
+                    <p>-</p>
+                </category>
+                <!--<category name="Coursework">
+                    <p>test</p>
+                </category>-->
+
+            </resume-column>
+        </resume-body>
+    </resume>
+
+
+</body></html>
