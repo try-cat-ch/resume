@@ -1,0 +1,12 @@
+
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+    <title>Resume</title>
+    <body>
+        <h1>Minecraft Server</h1>
+        Server hostname: {{ ansible_hostname }} <br>
+        Server os family: { ansible_os_family }} <br>
+        IP Address this server: {{ ansible_default_ipv4.address }} <br>
+
+        Minecraft server: {{ hostvars['UbuntuServer_WebServer']['ansible_default_ipv4']['address'] }} <br>
+    </body>
+</html>
